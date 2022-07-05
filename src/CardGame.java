@@ -19,8 +19,8 @@ public class CardGame {
         }
     }
 
-    public static void printCards() {
-        for (Card card : deckOfCards) {
+    public static void printCards(ArrayList<Card> cardArray) {
+        for (Card card : cardArray) {
             System.out.println(card.toString());
         }
     }
