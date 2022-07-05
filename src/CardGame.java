@@ -54,4 +54,8 @@ public class CardGame {
         }
         return deckOfCards = shuffledDeck;
     }
+
+    public static void printMessage(String message) {
+        System.out.println(message);
+    }
 }
