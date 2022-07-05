@@ -46,6 +46,12 @@ public class CardGame {
     }
 
     public static ArrayList<Card> shuffleDeck() {
+        ArrayList<Card> shuffledDeck = new ArrayList<Card>();
 
+        for (int i = 0; i < 52; i++) {
+            int randomIndex = (int) (Math.random() * deckOfCards.size());
+            shuffledDeck.add(deckOfCards.remove(randomIndex));
+        }
+        return deckOfCards = shuffledDeck;
     }
 }
