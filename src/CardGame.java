@@ -25,4 +25,12 @@ public class CardGame {
         }
     }
 
+    public static Card dealCard() {
+        return deckOfCards.remove(0);
+    }
+
+    public static ArrayList<Card> sortDeckInNumberOrder() {
+
+    }
+
 }
