@@ -30,7 +30,10 @@ public class CardGame {
     }
 
     public static ArrayList<Card> sortDeckInNumberOrder() {
+        ArrayList<Card> numSort = deckOfCards.stream()
+                .sorted((c1, c2) -> c1.getValue() - c2.getValue()).collect(Collectors.toCollection(ArrayList::new));
 
+        deckOfCards = numSort;
+        return numSort;
     }
-
 }
