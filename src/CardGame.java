@@ -30,7 +30,12 @@ public class CardGame {
     }
 
     public static Card dealCard() {
-        return deckOfCards.remove(0);
+        if (deckOfCards.size() > 0) {
+            return deckOfCards.remove(0);
+        } else {
+            System.out.println("Out of cards!");
+            return null;
+        }
     }
 
     public static ArrayList<Card> sortDeckInNumberOrder() {
