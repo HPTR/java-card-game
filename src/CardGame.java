@@ -11,7 +11,7 @@ public class CardGame {
     static {
         for (int i = 0; i < 4; i++) {
 
-            String[] suits = new String[]{"\u2664;", "\u2661", "\u2667", "\u2662"};
+            String[] suits = new String[]{"\u2664", "\u2661", "\u2667", "\u2662"};
 
             for (int j = 0; j < 13; j++) {
 
