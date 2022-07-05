@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e43aa7d2-a51b-43e9-8c9b-6dce0a60f9cd" name="Changes" comment="Initial progress on deckOfCards generation">
+    <list default="true" id="e43aa7d2-a51b-43e9-8c9b-6dce0a60f9cd" name="Changes" comment="Update .gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +80,126 @@
       <option name="project" value="LOCAL" />
       <updated>1657014292145</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Create Card toString method override">
+      <created>1657016092934</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657016092934</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update deck generation and add printCards method">
+      <created>1657016136035</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657016136035</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add dealCard method">
+      <created>1657016402837</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657016402837</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add card field getters">
+      <created>1657016782264</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657016782264</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Replace suit strings with unicode characters">
+      <created>1657018328618</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1657018328618</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add symbol and value arrays for card generation">
+      <created>1657018352539</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1657018352539</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Update printCards method">
+      <created>1657018372539</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1657018372539</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Implement sortDeckInNumberOrder method">
+      <created>1657018397540</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1657018397540</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Various imports">
+      <created>1657018424502</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1657018424502</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Update printCards call to match new syntax">
+      <created>1657018443284</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1657018443284</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add sortDeckIntoSuits method">
+      <created>1657019006494</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1657019006494</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add call to sortDeckIntoSuits method in main">
+      <created>1657019017362</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1657019017362</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Remove unintended character">
+      <created>1657019437029</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1657019437029</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add shuffleDeck method">
+      <created>1657019452376</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1657019452376</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Add call to shuffleDeck method in main">
+      <created>1657019461761</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1657019461761</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Update .gitignore">
+      <created>1657019495627</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1657019495627</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Update .gitignore">
+      <created>1657019580160</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1657019580160</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +217,22 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Add Card class and constructor" />
     <MESSAGE value="Initial progress on deckOfCards generation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial progress on deckOfCards generation" />
+    <MESSAGE value="Create Card toString method override" />
+    <MESSAGE value="Update deck generation and add printCards method" />
+    <MESSAGE value="Add dealCard method" />
+    <MESSAGE value="Add card field getters" />
+    <MESSAGE value="Replace suit strings with unicode characters" />
+    <MESSAGE value="Add symbol and value arrays for card generation" />
+    <MESSAGE value="Update printCards method" />
+    <MESSAGE value="Implement sortDeckInNumberOrder method" />
+    <MESSAGE value="Various imports" />
+    <MESSAGE value="Update printCards call to match new syntax" />
+    <MESSAGE value="Add sortDeckIntoSuits method" />
+    <MESSAGE value="Add call to sortDeckIntoSuits method in main" />
+    <MESSAGE value="Remove unintended character" />
+    <MESSAGE value="Add shuffleDeck method" />
+    <MESSAGE value="Add call to shuffleDeck method in main" />
+    <MESSAGE value="Update .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update .gitignore" />
   </component>
 </project>
