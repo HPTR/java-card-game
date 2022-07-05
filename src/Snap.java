@@ -9,6 +9,7 @@ public class Snap extends CardGame {
         boolean isActive = true;
         while (isActive) {
             Card currentCard = CardGame.dealCard();
+            assert currentCard != null;
             printMessage(currentCard.toString());
             if (Objects.equals(currentCard.getSymbol(), previousSymbol)) {
                 printMessage("Snap!");
