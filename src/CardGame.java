@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 import java.util.stream.Collectors;
 
 public class CardGame {
@@ -23,12 +21,6 @@ public class CardGame {
         }
     }
 
-    public static void printCards(ArrayList<Card> cardArray) {
-        for (Card card : cardArray) {
-            System.out.println(card.toString());
-        }
-    }
-
     public static Card dealCard() {
         if (deckOfCards.size() > 0) {
             return deckOfCards.remove(0);
@@ -40,18 +32,18 @@ public class CardGame {
 
     public static ArrayList<Card> sortDeckInNumberOrder() {
         ArrayList<Card> numSort = deckOfCards.stream()
-                .sorted((c1, c2) -> c1.getValue() - c2.getValue()).collect(Collectors.toCollection(ArrayList::new));
+                .sorted(Comparator.comparingInt(Card::getValue)).collect(Collectors.toCollection(ArrayList::new));
 
         return deckOfCards = numSort;
     }
 
     public static ArrayList<Card> sortDeckIntoSuits() {
-        deckOfCards.sort((c1, c2) -> c1.getSuit().compareTo(c2.getSuit()));
+        deckOfCards.sort(Comparator.comparing(Card::getSuit));
         return deckOfCards;
     }
 
     public static ArrayList<Card> shuffleDeck() {
-        ArrayList<Card> shuffledDeck = new ArrayList<Card>();
+        ArrayList<Card> shuffledDeck = new ArrayList<>();
 
         for (int i = 0; i < 52; i++) {
             int randomIndex = (int) (Math.random() * deckOfCards.size());
