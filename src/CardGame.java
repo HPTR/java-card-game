@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,7 +37,15 @@ public class CardGame {
         ArrayList<Card> numSort = deckOfCards.stream()
                 .sorted((c1, c2) -> c1.getValue() - c2.getValue()).collect(Collectors.toCollection(ArrayList::new));
 
-        deckOfCards = numSort;
-        return numSort;
+        return deckOfCards = numSort;
+    }
+
+    public static ArrayList<Card> sortDeckIntoSuits() {
+        deckOfCards.sort((c1, c2) -> c1.getSuit().compareTo(c2.getSuit()));
+        return deckOfCards;
+    }
+
+    public static ArrayList<Card> shuffleDeck() {
+
     }
 }
