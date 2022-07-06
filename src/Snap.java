@@ -12,6 +12,28 @@ public class Snap extends CardGame {
         String userInput = input.nextLine();
     }
 
+    public static void startTimer(Player player) {
+        timer.schedule(new TimerTask() {
+                           @Override
+                           public void run() {
+
+                               Scanner input = new Scanner(System.in);
+                               String userInput = input.nextLine();
+
+                               if (Objects.equals(userInput, "snap")) {
+                                   timer.cancel();
+                                   printMessage("Snap!\n");
+                                   player.incrementScore();
+                               } else {
+                                   printMessage("You missed it, you lose!");
+                               }
+                           }
+
+                       },
+                3000
+        );
+    }
+    //Need to solve that you need to press enter once a pair is there to trigger the timer...
     public static void onePlayer(Player player) {
         CardGame.shuffleDeck();
         String previousSymbol = "";
@@ -22,22 +44,12 @@ public class Snap extends CardGame {
             printMessage(currentCard.toString());
             getInput();
             if (Objects.equals(currentCard.getSymbol(), previousSymbol)) {
-                printMessage("Snap!\n");
-                player.incrementScore();
+                startTimer(player);
                 isActive = false;
             } else {
                 previousSymbol = currentCard.getSymbol();
             }
         }
-    }
-
-    public static void startTimer() {
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-
-            }
-        })
     }
 
     public static void twoPlayer(Player playerOne, Player playerTwo) {
