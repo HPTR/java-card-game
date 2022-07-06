@@ -53,6 +53,6 @@ public class CardGame {
     }
 
     public static void printMessage(String message) {
-        System.out.println(message);
+        System.out.print(message);
     }
 }
