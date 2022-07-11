@@ -65,35 +65,32 @@ public class Snap extends CardGame {
         }
     }
 
-    public static void twoPlayer(Player playerOne, Player playerTwo) {
+    public static void twoPlayer(Player playerOne, Player playerTwo) throws IOException {
         CardGame.shuffleDeck();
-        String previousSymbol = "";
+        ArrayList<String> dealtCardSymbols = new ArrayList<>();
+        dealtCardSymbols.add("B");
         boolean isActive = true;
         int turnCounter = 1;
         while (isActive) {
             Card currentCard = CardGame.dealCard();
             assert currentCard != null;
+            dealtCardSymbols.add(currentCard.getSymbol());
             printMessage(currentCard.toString());
-            if (Objects.equals(currentCard.getSymbol(), previousSymbol)) {
-                printMessage("\nSnap!\n");
+
+            if (Objects.equals(dealtCardSymbols.get(dealtCardSymbols.size() - 1), dealtCardSymbols.get(dealtCardSymbols.size() - 2))) {
+                isActive = false;
+                startTimer(playerTwo);
 
                 if (turnCounter % 2 == 0) {
-                    playerTwo.incrementScore();
-                    printMessage(String.format("%s wins!", playerTwo.getName()));
+                    printMessage(playerTwo.getName() + " - ");
                 } else {
-                    playerOne.incrementScore();
-                    printMessage(String.format("%s wins!", playerOne.getName()));
+                    printMessage(playerOne.getName() + " - ");
                 }
 
                 isActive = false;
-            } else {
-                getInput();
-                previousSymbol = currentCard.getSymbol();
-                turnCounter += 1;
             }
-
+            getInput();
+            turnCounter++;
         }
-
     }
-
 }
