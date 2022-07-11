@@ -15,7 +15,7 @@ public abstract class Commands {
         this.nextCommands = nextCommands;
     }
 
-    abstract public void run();
+    abstract public Player run();
 
     public String getNextCommands() {
         return nextCommands;

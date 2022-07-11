@@ -1,23 +1,21 @@
 public class PlayerCommands extends Commands {
 
     private Player player;
-
     public PlayerCommands() {
         super("Create Player", new String[]{}, "player");
     }
-
     public Player getUser() {
         return player;
     }
 
     @Override
-    public void run() {
+    public Player run() {
         printMessage("Enter player name");
         String name = getStringInput();
 
         player = new Player(name);
-        printMessage(player.toString());
 
         setNextCommands("home");
+        return player;
     }
 }
