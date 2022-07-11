@@ -1,11 +1,11 @@
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Commands currentCommands = new HomeCommands();
-        currentCommands.run();
+            Commands currentCommands = new HomeCommands();
+            currentCommands.run();
 
-        boolean isActive = true;
-        while(isActive){
             switch(currentCommands.getNextCommands()){
                 case "onePlayer" :
                     currentCommands = new PlayerCommands();
@@ -13,7 +13,6 @@ public class Main {
                     Player player = ((PlayerCommands) currentCommands).getUser();
 
                     Snap.onePlayer(player);
-                    CardGame.printMessage(player.toString());
                     break;
 
                 case "twoPlayer" :
@@ -26,13 +25,10 @@ public class Main {
                     Player playerTwo = ((PlayerCommands) currentCommands).getUser();
 
                     Snap.twoPlayer(playerOne, playerTwo);
-                    CardGame.printMessage(playerOne.toString());
-                    CardGame.printMessage(playerTwo.toString());
                     break;
 
                 default:
-                    isActive = false;
+                    System.exit(0);
             }
-        }
     }
 }
