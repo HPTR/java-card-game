@@ -1,7 +1,5 @@
-import java.util.Objects;
-import java.util.Scanner;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
+import java.io.*;
 
 public class Snap extends CardGame {
 
@@ -12,22 +10,30 @@ public class Snap extends CardGame {
         String userInput = input.nextLine();
     }
 
-    public static void startTimer(Player player) {
-        timer.schedule(new TimerTask() {
-                           @Override
-                           public void run() {
+    private static String str = "";
+    private static boolean victory;
 
-                               Scanner input = new Scanner(System.in);
-                               String userInput = input.nextLine();
+    public static boolean isVictory() {
+        return victory;
+    }
 
-                               if (Objects.equals(userInput, "snap")) {
-                                   timer.cancel();
-                                   printMessage("Snap!\n");
-                                   player.incrementScore();
-                               } else {
-                                   printMessage("You missed it, you lose!");
-                               }
-                           }
+    public static void setVictory(boolean victory) {
+        Snap.victory = victory;
+    }
+
+    static TimerTask task = new TimerTask() {
+        public void run() {
+            if (str.equals("snap")) {
+                System.out.println("Snap! You Win!");
+                setVictory(true);
+            } else {
+                System.out.println("You lose!");
+                setVictory(false);
+            }
+
+            System.exit(0);
+        }
+    };
 
                        },
                 3000
