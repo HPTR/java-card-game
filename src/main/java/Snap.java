@@ -35,26 +35,33 @@ public class Snap extends CardGame {
         }
     };
 
-                       },
-                3000
-        );
+    public static void startTimer(Player player) throws IOException {
+        Timer timer = new Timer();
+        timer.schedule( task, 2*1000 );
+
+        System.out.println("");
+        BufferedReader in = new BufferedReader(
+                new InputStreamReader( System.in ) );
+        str = in.readLine();
     }
-    //Need to solve that you need to press enter once a pair is there to trigger the timer...
-    public static void onePlayer(Player player) {
+
+    public static void onePlayer(Player player) throws IOException {
         CardGame.shuffleDeck();
-        String previousSymbol = "";
+        ArrayList<String> dealtCardSymbols = new ArrayList<>();
+        dealtCardSymbols.add("B");
         boolean isActive = true;
+
         while (isActive) {
             Card currentCard = CardGame.dealCard();
             assert currentCard != null;
+            dealtCardSymbols.add(currentCard.getSymbol());
             printMessage(currentCard.toString());
-            getInput();
-            if (Objects.equals(currentCard.getSymbol(), previousSymbol)) {
-                startTimer(player);
+
+            if (Objects.equals(dealtCardSymbols.get(dealtCardSymbols.size() - 1), dealtCardSymbols.get(dealtCardSymbols.size() - 2))) {
                 isActive = false;
-            } else {
-                previousSymbol = currentCard.getSymbol();
+                startTimer(player);
             }
+            getInput();
         }
     }
 
