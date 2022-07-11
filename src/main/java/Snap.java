@@ -3,37 +3,9 @@ import java.io.*;
 
 public class Snap extends CardGame {
 
+
     static Timer timer = new Timer();
-
-    public static void getInput() {
-        Scanner input = new Scanner(System.in);
-        String userInput = input.nextLine();
-    }
-
     private static String str = "";
-    private static boolean victory;
-
-    public static boolean isVictory() {
-        return victory;
-    }
-
-    public static void setVictory(boolean victory) {
-        Snap.victory = victory;
-    }
-
-    static TimerTask task = new TimerTask() {
-        public void run() {
-            if (str.equals("snap")) {
-                System.out.println("Snap! You Win!");
-                setVictory(true);
-            } else {
-                System.out.println("You lose!");
-                setVictory(false);
-            }
-
-            System.exit(0);
-        }
-    };
 
     public static void startTimer(Player player) throws IOException {
         Timer timer = new Timer();
@@ -43,6 +15,23 @@ public class Snap extends CardGame {
         BufferedReader in = new BufferedReader(
                 new InputStreamReader( System.in ) );
         str = in.readLine();
+    }
+
+    static TimerTask task = new TimerTask() {
+        public void run() {
+            if (str.equals("snap")) {
+                System.out.println("Snap! You Win!");
+            } else {
+                System.out.println("You lose!");
+            }
+
+            System.exit(0);
+        }
+    };
+
+    public static void getInput() {
+        Scanner input = new Scanner(System.in);
+        String userInput = input.nextLine();
     }
 
     public static void onePlayer(Player player) throws IOException {
@@ -71,6 +60,7 @@ public class Snap extends CardGame {
         dealtCardSymbols.add("B");
         boolean isActive = true;
         int turnCounter = 1;
+
         while (isActive) {
             Card currentCard = CardGame.dealCard();
             assert currentCard != null;
@@ -82,9 +72,9 @@ public class Snap extends CardGame {
                 startTimer(playerTwo);
 
                 if (turnCounter % 2 == 0) {
-                    printMessage(playerTwo.getName() + " - ");
+                    printMessage(playerTwo.toString() + " - ");
                 } else {
-                    printMessage(playerOne.getName() + " - ");
+                    printMessage(playerOne.toString() + " - ");
                 }
 
                 isActive = false;
