@@ -11,6 +11,6 @@ public class Player {
 
     @Override
     public String toString() {
-        return String.format("\nPlayer : %s \n", this.name);
+        return String.format("\nPlayer : %s \n", name);
     }
 }
