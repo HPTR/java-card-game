@@ -3,39 +3,56 @@ import java.io.*;
 
 public class Snap extends CardGame {
 
+    private final Player playerOne;
+    private final Player playerTwo;
 
-    static Timer timer = new Timer();
-    private static String str = "";
+    public Snap(Player playerOne, Player playerTwo) {
+        this.playerOne = playerOne;
+        this.playerTwo = playerTwo;
+    }
 
-    public static void startTimer(Player player) throws IOException {
+    private String str = "";
+    private int turnCounter = 0;
+
+    public void startTimer() throws IOException {
         Timer timer = new Timer();
         timer.schedule( task, 2*1000 );
 
-        System.out.println("");
+        System.out.println();
         BufferedReader in = new BufferedReader(
                 new InputStreamReader( System.in ) );
         str = in.readLine();
     }
 
-    static TimerTask task = new TimerTask() {
+    TimerTask task = new TimerTask() {
         public void run() {
-            if (str.equals("snap")) {
-                System.out.println("Snap! You Win!");
+
+            if (playerTwo == null) {
+                if (str.equals("snap")) {
+                    System.out.println("\nSnap! You Win!");
+                } else {
+                    System.out.println("\nYou lose!");
+                }
             } else {
-                System.out.println("You lose!");
+                String currentPlayer = turnCounter % 2 == 0 ? playerTwo.getName() : playerOne.getName();
+                if (str.equals("snap")) {
+                    System.out.println("\nSnap! " + currentPlayer + " Wins!");
+                } else {
+                    System.out.println("\n" + currentPlayer + " loses!");
+                }
             }
 
             System.exit(0);
         }
     };
 
-    public static void getInput() {
+    public void getInput() {
         Scanner input = new Scanner(System.in);
         String userInput = input.nextLine();
     }
 
-    public static void onePlayer(Player player) throws IOException {
-        CardGame.shuffleDeck();
+    public void onePlayer() throws IOException {
+        CardGame.deckOfCards = CardGame.shuffleDeck();
         ArrayList<String> dealtCardSymbols = new ArrayList<>();
         dealtCardSymbols.add("B");
         boolean isActive = true;
@@ -48,18 +65,17 @@ public class Snap extends CardGame {
 
             if (Objects.equals(dealtCardSymbols.get(dealtCardSymbols.size() - 1), dealtCardSymbols.get(dealtCardSymbols.size() - 2))) {
                 isActive = false;
-                startTimer(player);
+                startTimer();
             }
             getInput();
         }
     }
 
-    public static void twoPlayer(Player playerOne, Player playerTwo) throws IOException {
-        CardGame.shuffleDeck();
+    public void twoPlayer() throws IOException {
+        CardGame.deckOfCards = CardGame.shuffleDeck();
         ArrayList<String> dealtCardSymbols = new ArrayList<>();
-        dealtCardSymbols.add("B");
+        dealtCardSymbols.add("0");
         boolean isActive = true;
-        int turnCounter = 1;
 
         while (isActive) {
             Card currentCard = CardGame.dealCard();
@@ -68,15 +84,7 @@ public class Snap extends CardGame {
             printMessage(currentCard.toString());
 
             if (Objects.equals(dealtCardSymbols.get(dealtCardSymbols.size() - 1), dealtCardSymbols.get(dealtCardSymbols.size() - 2))) {
-                isActive = false;
-                startTimer(playerTwo);
-
-                if (turnCounter % 2 == 0) {
-                    printMessage(playerTwo.toString() + " - ");
-                } else {
-                    printMessage(playerOne.toString() + " - ");
-                }
-
+                startTimer();
                 isActive = false;
             }
             getInput();
