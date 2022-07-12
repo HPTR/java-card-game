@@ -15,7 +15,7 @@ public abstract class Commands {
         this.nextCommands = nextCommands;
     }
 
-    abstract public Player run();
+    abstract public void run();
 
     public String getNextCommands() {
         return nextCommands;
@@ -66,7 +66,6 @@ public abstract class Commands {
         return input;
     }
 
-    //maybe go
     public int getIntegerInput() {
         return getIntegerInput(commands.length);
     }
@@ -88,5 +87,4 @@ public abstract class Commands {
         }
         return input;
     }
-
 }
