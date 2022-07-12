@@ -27,22 +27,22 @@ public class Snap extends CardGame {
     TimerTask task = new TimerTask() {
         public void run() {
 
-            if (playerTwo == null) {
-                if (str.equals("snap")) {
-                    System.out.println("\nSnap! You Win!");
-                } else {
-                    System.out.println("\nYou lose!");
-                }
+        if (playerTwo == null) {
+            if (str.equals("snap")) {
+                System.out.println("\nSnap! You Win!");
             } else {
-                String currentPlayer = turnCounter % 2 == 0 ? playerTwo.getName() : playerOne.getName();
-                if (str.equals("snap")) {
-                    System.out.println("\nSnap! " + currentPlayer + " Wins!");
-                } else {
-                    System.out.println("\n" + currentPlayer + " loses!");
-                }
+                System.out.println("\nYou lose!");
             }
+        } else {
+            String currentPlayer = turnCounter % 2 == 0 ? playerTwo.getName() : playerOne.getName();
+            if (str.equals("snap")) {
+                System.out.println("\nSnap! " + currentPlayer + " Wins!");
+            } else {
+                System.out.println("\n" + currentPlayer + " loses!");
+            }
+        }
 
-            System.exit(0);
+        System.exit(0);
         }
     };
 
