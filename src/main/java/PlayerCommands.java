@@ -9,13 +9,12 @@ public class PlayerCommands extends Commands {
     }
 
     @Override
-    public Player run() {
+    public void run() {
         printMessage("Enter player name");
         String name = getStringInput();
 
         player = new Player(name);
 
         setNextCommands("home");
-        return player;
     }
 }

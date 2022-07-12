@@ -4,7 +4,7 @@ public class HomeCommands extends Commands {
     }
 
     @Override
-    public Player run() {
+    public void run() {
         printGreeting();
         printCommands();
 
@@ -17,6 +17,5 @@ public class HomeCommands extends Commands {
         } else {
             setNextCommands("");
         }
-        return null;
     }
 }
