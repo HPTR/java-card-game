@@ -25,8 +25,9 @@ public class CardGame {
         if (deckOfCards.size() > 0) {
             return deckOfCards.remove(0);
         } else {
-            System.out.println("Out of cards!");
-            return null;
+            System.out.println("Out of cards! Reshuffling...");
+            deckOfCards = shuffleDeck();
+            return deckOfCards.remove(0);
         }
     }
 
@@ -49,7 +50,7 @@ public class CardGame {
             int randomIndex = (int) (Math.random() * deckOfCards.size());
             shuffledDeck.add(deckOfCards.remove(randomIndex));
         }
-        return deckOfCards = shuffledDeck;
+        return shuffledDeck;
     }
 
     public static void printMessage(String message) {
