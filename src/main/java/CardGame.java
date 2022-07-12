@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class CardGame {
@@ -55,5 +56,11 @@ public class CardGame {
 
     public static void printMessage(String message) {
         System.out.print(message);
+    }
+
+
+    public void getInput() {
+        Scanner input = new Scanner(System.in);
+        String userInput = input.nextLine();
     }
 }

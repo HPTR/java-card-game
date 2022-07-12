@@ -46,15 +46,10 @@ public class Snap extends CardGame {
         }
     };
 
-    public void getInput() {
-        Scanner input = new Scanner(System.in);
-        String userInput = input.nextLine();
-    }
-
     public void onePlayer() throws IOException {
         CardGame.deckOfCards = CardGame.shuffleDeck();
         ArrayList<String> dealtCardSymbols = new ArrayList<>();
-        dealtCardSymbols.add("B");
+        dealtCardSymbols.add("0");
         boolean isActive = true;
 
         while (isActive) {
